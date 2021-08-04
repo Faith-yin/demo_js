@@ -1,6 +1,11 @@
 <!--
  * @Date: 2021-07-03 19:43:11
- * @information: cookie用法
+
+  1. cookie用法
+  2. vue源码学习时的一些测试代码
+  3. vue文件中的样式优先级 > 公共样式文件的优先级
+     !important 属性的样式优先级 > 内联样式优先级
+
 -->
 
 <template>
@@ -15,6 +20,8 @@
     <button @click="set">设置cookie</button>
     <button @click="get">获取cookie</button>
     <button @click="del">删除cookie</button>
+
+    <div style="margin: 30px 0">----------------------------------分割线--------------------------------------</div>
 
     <com-02 ref="com02Ref"
             proProps="这是传过去的值哦~"
@@ -32,6 +39,14 @@
         </div>
       </template>
     </com-02>
+
+    <div style="margin: 30px 0">----------------------------------分割线--------------------------------------</div>
+
+    <div class="test-css_container">
+      <div class="text">element: 当table使用fixed时，表中的自定义组件将呈现两次，然后重复调用接口</div>
+      <div id="text_1"
+           style="marign-top: 10px">这是一些测试文件</div>
+    </div>
 
   </div>
 </template>
@@ -125,4 +140,18 @@ export default {
 </script>
 
 <style lang="scss">
+.test-css_container {
+  padding: 20px;
+  border: 1px solid #1fb19e;
+
+  .text {
+    font-size: 20px;
+    color: #ff6700;
+  }
+
+  #text_1 {
+    margin-top: 100px !important;
+    color: #1fb19e;
+  }
+}
 </style>

@@ -1,0 +1,18 @@
+/*
+ * @Date: 2021-08-04 09:28:56
+ * @information: 公共样式文件
+ */
+
+.test-css_container {
+  padding: 50px;
+  border: 1px dashed #14df14;
+
+  .text {
+    font-size: 14px;
+    color: #0011ff;
+  }
+
+  #text_1 {
+    color: red;
+  }
+}

@@ -3,10 +3,10 @@
  * @information: rem配置
  */
 
- // 基准大小:此值要与 postcss.config.js 文件中的 rootValue保持一致
- const  baseSize = 16
+// 基准大小:此值要与 postcss.config.js 文件中的 rootValue保持一致
+const baseSize = 16
 
-function setRem() {
+function setRem () {
   // 当前页面宽度相对于 750 宽的缩放比例，可根据自己需要修改
   const scale = document.documentElement.clientWidth / 375
   // 设置页面根节点字体大小
@@ -17,7 +17,7 @@ function setRem() {
 setRem()
 
 // 改变窗口大小时重新设置 rem
-window.onresize = function() {
-	setRem()
+window.onresize = function () {
+  setRem()
 }
 
