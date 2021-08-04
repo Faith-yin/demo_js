@@ -3,22 +3,29 @@
  * @information: axios取消请求
 -->
 <template>
-<div>
-
-</div>
+  <div>
+    <com-02 ref="com02Ref"
+            proProps="这是传过去的值哦~"
+            @funCom02Emit="funCom02EmitPage17"></com-02>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 
+import Com02 from '@/components/Com02'
+
 export default {
-  data() {
+  components: {
+    Com02
+  },
+  data () {
     return {
       url: `https://api.apiopen.top/getJoke?page=1&count=1&type=video`,
     }
   },
   methods: {
-    fetchData() {
+    fetchData () {
       let CancelToken = axios.CancelToken
       let source = CancelToken.source()
       // console.log(cancelToken, source)
@@ -28,7 +35,7 @@ export default {
       }).then(res => {
         console.log('成功了', res)
       }).catch(err => {
-        if(axios.isCancel(err)) {
+        if (axios.isCancel(err)) {
           console.log('请求取消了')
         } else {
           console.log('失败了', err)
@@ -40,13 +47,17 @@ export default {
       source.cancel('不想请求了啊')
 
     },
+
+    funCom02EmitPage17 (val) {
+      console.log('funCom02EmitPage17-子组件响应的值：', val)
+    },
+
   },
-  created() {
+  created () {
     this.fetchData()
   },
 }
 </script>
 
 <style lang="scss">
-  
 </style>

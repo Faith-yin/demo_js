@@ -10,7 +10,7 @@ import store from './store'
 import '@/style/index.scss'
 import ypfMethods from 'ypf-methods'
 // rem配置
-import '@/assets/js/rem'
+// import '@/assets/js/rem'
 
 import '@/assets/js/initAxios'
 
